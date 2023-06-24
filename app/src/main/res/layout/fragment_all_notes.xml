@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchView"
-        tools:ignore="MissingConstraints" />
+        tools:listitem="@layout/fragment_single_note"/>
 
     <SearchView
         android:id="@+id/searchView"

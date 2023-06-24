@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         binding.pickDate.setOnClickListener{ViewNotes()}
     }
     fun ViewNotes() {
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_all_notes)
     }
 }
