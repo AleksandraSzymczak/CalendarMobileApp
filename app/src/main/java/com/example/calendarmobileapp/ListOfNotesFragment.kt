@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.calendarmobileapp.databinding.FragmentAllNotesBinding
 
 
@@ -24,9 +25,18 @@ class ListOfNotesFragment : Fragment() {
         binding.dodajNotatke.setOnClickListener{
             findNavController().navigate(R.id.action_listOfNotesFragment_to_noteFragment)
         }
+        val adapter = NoteAdapter(createNotes())
+        binding.SpisNotatek.layoutManager = GridLayoutManager(requireContext(),1)
+        binding.SpisNotatek.adapter = adapter
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    private fun createNotes(): List<Note> = buildList{
+        for(i in 0..100){
+            val newNote = Note("tytul","opis","20.03.2023")
+            add(newNote)
+        }
     }
 }
