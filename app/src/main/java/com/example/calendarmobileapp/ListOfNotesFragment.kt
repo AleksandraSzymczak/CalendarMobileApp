@@ -6,28 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.calendarmobileapp.databinding.MainCalendarViewBinding
+import com.example.calendarmobileapp.databinding.FragmentAllNotesBinding
 
-class StartAppCalendarFragment : Fragment() {
-  private var _binding:MainCalendarViewBinding? = null
-  private val binding get() = _binding!!
+
+class ListOfNotesFragment : Fragment() {
+    private var _binding:FragmentAllNotesBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainCalendarViewBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentAllNotesBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.pickDate.setOnClickListener{
-            findNavController().navigate(R.id.action_startAppCalendarFragment2_to_listOfNotesFragment)
+        binding.dodajNotatke.setOnClickListener{
+            findNavController().navigate(R.id.action_listOfNotesFragment_to_noteFragment)
         }
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

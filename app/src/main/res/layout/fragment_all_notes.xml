@@ -5,20 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ListOfNotesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/SpisNotatek"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
-        tools:listitem="@layout/fragment_single_note"/>
+        app:layout_constraintTop_toBottomOf="@id/WyszukajNotatke"
+        tools:listitem="@layout/fragment_single_note_structure"/>
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/WyszukajNotatke"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_margin="15dp"
@@ -30,6 +30,7 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/dodajNotatke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"

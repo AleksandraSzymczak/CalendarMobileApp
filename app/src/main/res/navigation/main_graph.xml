@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/startAppCalendarFragment2">
+    <fragment
+        android:id="@+id/listOfNotesFragment"
+        android:name="com.example.calendarmobileapp.ListOfNotesFragment"
+        android:label="fragment_all_notes"
+        tools:layout="@layout/fragment_all_notes" >
+        <action
+            android:id="@+id/action_listOfNotesFragment_to_noteFragment"
+            app:destination="@id/noteFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.calendarmobileapp.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" />
+    <fragment
+        android:id="@+id/startAppCalendarFragment2"
+        android:name="com.example.calendarmobileapp.StartAppCalendarFragment"
+        android:label="main_calendar_view"
+        tools:layout="@layout/main_calendar_view" >
+        <action
+            android:id="@+id/action_startAppCalendarFragment2_to_listOfNotesFragment"
+            app:destination="@id/listOfNotesFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:launchSingleTop="false" />
+    </fragment>
+</navigation>
+
