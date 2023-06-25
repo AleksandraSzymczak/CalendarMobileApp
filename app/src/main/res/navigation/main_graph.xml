@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/startAppCalendarFragment2">
+    app:startDestination="@id/startAppCalendarFragment">
     <fragment
-        android:id="@+id/listOfNotesFragment"
-        android:name="com.example.calendarmobileapp.viewmodel.ListOfNotesFragment"
-        android:label="fragment_all_notes"
-        tools:layout="@layout/fragment_list_of_notes" >
+        android:id="@+id/startAppCalendarFragment"
+        android:name="com.example.calendarmobileapp.views.fragments.StartAppCalendarFragment"
+        android:label="main_calendar_view"
+        tools:layout="@layout/main_calendar_view" >
         <action
-            android:id="@+id/action_listOfNotesFragment_to_noteFragment"
-            app:destination="@id/noteFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
+            android:id="@+id/action_startAppCalendarFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
@@ -20,15 +19,13 @@
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" />
     <fragment
-        android:id="@+id/startAppCalendarFragment2"
-        android:name="com.example.calendarmobileapp.views.fragments.StartAppCalendarFragment"
-        android:label="main_calendar_view"
-        tools:layout="@layout/main_calendar_view" >
+        android:id="@+id/blankFragment"
+        android:name="com.example.calendarmobileapp.views.fragments.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
         <action
-            android:id="@+id/action_startAppCalendarFragment2_to_listOfNotesFragment"
-            app:destination="@id/listOfNotesFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:launchSingleTop="false" />
+            android:id="@+id/action_blankFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
     </fragment>
 </navigation>
 

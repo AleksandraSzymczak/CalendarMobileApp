@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.calendarmobileapp.viewmodel.MainViewModel
 import com.example.calendarmobileapp.R
@@ -19,6 +20,8 @@ import com.example.calendarmobileapp.remote.ApiClient
 import com.example.calendarmobileapp.remote.RetrofitClient
 import com.example.calendarmobileapp.remote.WeatherResponse
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -60,11 +63,17 @@ class StartAppCalendarFragment : Fragment() {
             }
             val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
             val formattedDate = dateFormat.format(calendar.time)
-            mainVm.setDate(formattedDate)
+            viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+                mainVm.setDate(formattedDate)
+            }
         }
         binding.pickDate.setOnClickListener{
-            findNavController().navigate(R.id.action_startAppCalendarFragment2_to_listOfNotesFragment)
+            viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+                mainVm.loadDataFromDBSpecificDate()
+            }
+            findNavController().navigate(R.id.action_startAppCalendarFragment_to_blankFragment)
         }
+
     }
     override fun onResume() {
         super.onResume()

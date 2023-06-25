@@ -5,19 +5,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.calendarmobileapp.data.entities.Note
 import com.example.calendarmobileapp.databinding.FragmentSingleNoteStructureBinding
+import kotlinx.coroutines.flow.Flow
+
 class NoteAdapter(
-    private val notes:List<Note>,
+    private var notes: List<Note>,
     private val onNoteClick: (Note) -> Unit
-) :
-RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+    fun updateNotes(newNotes: List<Note>) {
+        notes = newNotes
+        notifyDataSetChanged()
+    }
+    inner class NoteViewHolder(binding: FragmentSingleNoteStructureBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        val tytul = binding.noteTytul
+        val opis = binding.noteOpis
+        val date = binding.noteDate
 
-    inner class NoteViewHolder(binding:FragmentSingleNoteStructureBinding) : RecyclerView.ViewHolder(binding.root) {
-        val tytul = binding.noteTytul;
-        val opis = binding.noteOpis;
-        val date = binding.noteDate;
-
-        init{
-            binding.root.setOnClickListener{
+        init {
+            binding.root.setOnClickListener {
                 onNoteClick(notes[adapterPosition])
             }
         }
@@ -30,9 +35,10 @@ RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.date.text = notes[position].date
-        holder.tytul.text = notes[position].tytul
-        holder.opis.text = notes[position].opis
+        val note = notes[position]
+        holder.date.text = note.date
+        holder.tytul.text = note.tytul
+        holder.opis.text = note.opis
     }
 
     override fun getItemCount(): Int {
