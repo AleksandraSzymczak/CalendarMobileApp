@@ -8,18 +8,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.calendarmobileapp.databinding.FragmentAllNotesBinding
+import com.example.calendarmobileapp.adapters.NoteAdapter
+import com.example.calendarmobileapp.data.entities.Note
+import com.example.calendarmobileapp.databinding.FragmentListOfNotesBinding
+import com.example.calendarmobileapp.viewmodel.MainViewModel
 
 
 class ListOfNotesFragment : Fragment() {
     private val mainVm by activityViewModels<MainViewModel>()
-    private var _binding:FragmentAllNotesBinding? = null
+    private var _binding:FragmentListOfNotesBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAllNotesBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentListOfNotesBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

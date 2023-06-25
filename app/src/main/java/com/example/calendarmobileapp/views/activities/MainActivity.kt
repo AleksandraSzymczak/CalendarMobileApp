@@ -1,11 +1,12 @@
-package com.example.calendarmobileapp
+package com.example.calendarmobileapp.views.activities
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.calendarmobileapp.viewmodel.MainViewModel
+import com.example.calendarmobileapp.R
 import com.example.calendarmobileapp.databinding.ActivityMainBinding
 
 

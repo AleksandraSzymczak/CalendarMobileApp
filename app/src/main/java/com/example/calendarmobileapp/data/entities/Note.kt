@@ -1,4 +1,4 @@
-package com.example.calendarmobileapp
+package com.example.calendarmobileapp.data.entities
 
 import java.util.Date
 

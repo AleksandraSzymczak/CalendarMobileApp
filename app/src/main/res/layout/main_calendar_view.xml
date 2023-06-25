@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".StartAppCalendarFragment">
+    android:background="@color/design_default_color_secondary"
+    tools:context=".views.fragments.StartAppCalendarFragment">
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="164dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="377dp"
+        android:layout_height="391dp"
+        android:layout_marginTop="20dp"
+        android:background="#C2F5FB"
+        android:focusedMonthDateColor="#4C9098"
+        android:selectedWeekBackgroundColor="#60AEB8"
+        app:layout_constraintBottom_toTopOf="@id/pick_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pogodaZdj" />
 
     <Button
         android:id="@+id/pick_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wybierz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/calendarView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/pogodaZdj"
+        android:layout_width="83dp"
+        android:layout_height="81dp"
+        android:layout_margin="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_add_24" />
+
+    <TextView
+        android:id="@+id/CurrTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:ems="10"
+        android:inputType="time"
+        android:text="Current Time"
+        app:layout_constraintLeft_toRightOf="@+id/pogodaZdj" />
+
+    <TextView
+        android:id="@+id/Temperatura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toRightOf="@+id/pogodaZdj"
+        app:layout_constraintTop_toBottomOf="@id/CurrTime" />
+
+    <TextView
+        android:id="@+id/Lokalizacja"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toRightOf="@+id/Temperatura"
+        app:layout_constraintTop_toBottomOf="@id/CurrTime" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

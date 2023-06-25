@@ -1,8 +1,9 @@
-package com.example.calendarmobileapp
+package com.example.calendarmobileapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.calendarmobileapp.data.entities.Note
 import com.example.calendarmobileapp.databinding.FragmentSingleNoteStructureBinding
 class NoteAdapter(
     private val notes:List<Note>,

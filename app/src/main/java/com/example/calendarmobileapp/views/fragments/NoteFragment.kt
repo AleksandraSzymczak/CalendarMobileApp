@@ -1,4 +1,4 @@
-package com.example.calendarmobileapp
+package com.example.calendarmobileapp.views.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.calendarmobileapp.databinding.ActivityMainBinding
+import com.example.calendarmobileapp.viewmodel.MainViewModel
+import com.example.calendarmobileapp.data.entities.Note
 import com.example.calendarmobileapp.databinding.FragmentNoteBinding
-import com.example.calendarmobileapp.databinding.MainCalendarViewBinding
 
 class NoteFragment : Fragment() {
     private val mainVm by activityViewModels<MainViewModel>()

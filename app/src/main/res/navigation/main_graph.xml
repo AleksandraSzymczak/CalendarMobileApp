@@ -6,9 +6,9 @@
     app:startDestination="@id/startAppCalendarFragment2">
     <fragment
         android:id="@+id/listOfNotesFragment"
-        android:name="com.example.calendarmobileapp.ListOfNotesFragment"
+        android:name="com.example.calendarmobileapp.viewmodel.ListOfNotesFragment"
         android:label="fragment_all_notes"
-        tools:layout="@layout/fragment_all_notes" >
+        tools:layout="@layout/fragment_list_of_notes" >
         <action
             android:id="@+id/action_listOfNotesFragment_to_noteFragment"
             app:destination="@id/noteFragment"
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.calendarmobileapp.NoteFragment"
+        android:name="com.example.calendarmobileapp.views.fragments.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" />
     <fragment
         android:id="@+id/startAppCalendarFragment2"
-        android:name="com.example.calendarmobileapp.StartAppCalendarFragment"
+        android:name="com.example.calendarmobileapp.views.fragments.StartAppCalendarFragment"
         android:label="main_calendar_view"
         tools:layout="@layout/main_calendar_view" >
         <action
