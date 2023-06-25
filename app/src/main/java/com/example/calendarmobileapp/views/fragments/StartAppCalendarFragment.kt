@@ -77,9 +77,10 @@ class StartAppCalendarFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(updateTemperatureRunnable, updateInterval)
+        //handler.postDelayed(updateTemperatureRunnable, updateInterval)
+        updateTemperatureRunnable.run()
+        view?.invalidate()
     }
-
     override fun onPause() {
         super.onPause()
         handler.removeCallbacks(updateTemperatureRunnable)

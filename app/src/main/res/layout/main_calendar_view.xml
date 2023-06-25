@@ -37,8 +37,7 @@
         android:layout_height="81dp"
         android:layout_margin="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_add_24" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/CurrTime"
@@ -47,7 +46,7 @@
         android:layout_marginLeft="130dp"
         android:ems="10"
         android:inputType="time"
-        android:text="Current Time"
+        android:text=""
         app:layout_constraintLeft_toRightOf="@+id/pogodaZdj" />
 
     <TextView
@@ -56,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="10dp"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintLeft_toRightOf="@+id/pogodaZdj"
         app:layout_constraintTop_toBottomOf="@id/CurrTime" />
 
@@ -66,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintLeft_toRightOf="@+id/Temperatura"
         app:layout_constraintTop_toBottomOf="@id/CurrTime" />
 

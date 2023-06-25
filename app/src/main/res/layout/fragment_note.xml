@@ -4,40 +4,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.fragments.NoteFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="451dp"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="96dp">
+
             <TextView
                 android:id="@+id/noteTytul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="20dp"
                 android:text="Tytul"
                 android:textColor="@color/black"
-                android:textSize="18sp">
-            </TextView>
+                android:textSize="18sp"></TextView>
         </RelativeLayout>
+
         <TextView
             android:id="@+id/noteOpis"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="277dp"
             android:layout_alignParentStart="true"
             android:text="Opis"
             android:textColor="@color/black"
-            android:textSize="14sp">
-        </TextView>
+            android:textSize="14sp"></TextView>
+
         <TextView
             android:id="@+id/noteDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_alignParentStart="true"
             android:text="Data"
             android:textColor="@color/black"
-            android:textSize="14sp">
-        </TextView>
+            android:textSize="14sp"></TextView>
+
+
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/DeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Usun" />
+
+    </RelativeLayout>
+
+
 </FrameLayout>

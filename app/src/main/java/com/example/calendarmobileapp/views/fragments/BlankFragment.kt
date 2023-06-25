@@ -32,7 +32,7 @@ class BlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.dodajNotatke.setOnClickListener {
-            findNavController().navigate(R.id.action_blankFragment_to_noteFragment)
+            findNavController().navigate(R.id.action_blankFragment_to_addNote)
         }
 
         val adapter = NoteAdapter(
@@ -54,7 +54,10 @@ class BlankFragment : Fragment() {
             adapter.updateNotes(notes)
         }
     }
-
+    override fun onResume() {
+        super.onResume()
+        view?.invalidate()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
